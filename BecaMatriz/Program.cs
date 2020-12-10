@@ -19,9 +19,9 @@ namespace BecaMatriz
         private static void ImprimeMatriz(int[,] matriz)
         {
             Console.WriteLine();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < matriz.GetLength(0); i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < matriz.GetLength(1); j++)
                 {
                     Console.Write($"{matriz[i, j]} ");
                 }
@@ -30,9 +30,9 @@ namespace BecaMatriz
         }
         private static void SomaDiagonal_Victor(int[,] matriz)
         {
-            for (int i = 0; i < 3; i++)     //Preenche a lista com dados do usuario
+            for (int i = 0; i < matriz.GetLength(0); i++)     //Preenche a lista com dados do usuario
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < matriz.GetLength(1); j++)
                 {
                     Console.Write($"Valor para a posição [{i},{j}]: ");
                     matriz[i, j] = int.Parse(Console.ReadLine());
@@ -43,9 +43,9 @@ namespace BecaMatriz
 
             int soma = 0;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < matriz.GetLength(0); i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < matriz.GetLength(1); j++)
                 {
                     if (i == j)
                     {
