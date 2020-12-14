@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BecaMatriz
 {
@@ -11,10 +7,9 @@ namespace BecaMatriz
         static void Main(string[] args)
         {
             int[,] matriz = new int[3, 3];
+
             SomaDiagonal_Victor(matriz);
         }
-
-        // Victor Castro
 
         private static void ImprimeMatriz(int[,] matriz)
         {
@@ -23,7 +18,13 @@ namespace BecaMatriz
             {
                 for (int j = 0; j < matriz.GetLength(1); j++)
                 {
+                    if (i == j)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+
                     Console.Write($"{matriz[i, j]} ");
+                    Console.ResetColor();
                 }
                 Console.WriteLine();
             }
